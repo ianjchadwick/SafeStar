@@ -13,7 +13,7 @@ SafeStar is a **motion planning algorithm** that extends A\* search with **safet
 To generate the figures, refer to the comments in `main_results.py`.  
 
 ### Generating Figures  
-1. **Visualizing Report Figures**  
+1. **Visualizing Figures**  
    - Locate **lines 46-177** in `draw_visualization.py`.  
    - Comment out all but one relevant figure variable.  
    - Run the script to generate the specified figure.  
@@ -40,5 +40,3 @@ To generate the figures, refer to the comments in `main_results.py`.
 
 ## Algorithm Explanation  
 SafeStar integrates a **potential field-based control scheme** with **A\* path planning** to optimize safe egress in dynamic environments.  
-
-For details about the algorithm and mathematical formulation, refer to the **final paper** in the `documents` folder.  
