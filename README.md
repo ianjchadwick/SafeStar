@@ -1,39 +1,44 @@
-# SafeStar
- ME570: Robot Motion Planning Final Project. An implementation of modified A* Algorithm path planning for escaping active shooter scenaiors
+# SafeStar  
+**ME570: Robot Motion Planning Final Project**  
+An implementation of a **modified A\* algorithm** for dynamic **path planning in emergency evacuations**.  
 
-## Required Packages:
-* numpy
-* pygame
+## Overview  
+SafeStar is a **motion planning algorithm** that extends A\* search with **safety heuristics**, optimizing escape routes in high-risk environments. The algorithm determines the best path for an individual to reach safety while avoiding hazards.  
 
-## User Instructions
-To generate the figures see the comments in main_results.py reproduced below:
+## Required Packages  
+- `numpy`  
+- `pygame`  
 
-Pygame creates one figure at a time because it runs until the user exits.
+## User Instructions  
+To generate the figures, refer to the comments in `main_results.py`.  
 
-In order to generate a figure that is used in the report, find the appropriate section (see lines 46 through 177 of draw_visualization.py) and comment out all but one of the figure's variables and run the script. It will generate the figure with the specified input parameters.
+### Generating Figures  
+1. **Visualizing Report Figures**  
+   - Locate **lines 46-177** in `draw_visualization.py`.  
+   - Comment out all but one relevant figure variable.  
+   - Run the script to generate the specified figure.  
 
-In order to generate your own figures, use the following guide below for the appropriate inputs. See graph.py for more details about each specific parameter and function.
+2. **Creating Custom Simulations**  
+   - Modify the input parameters to test different grid layouts and scenarios.  
 
-If you have any questions, please feel free to contact me at ianjchadwick@gmail.com or ianjc@bu.edu
+### Inputs & Outputs  
+- **Inputs:**  
+  - `size`: Integer defining the grid size (square dimensions).  
+  - `obstacles`: List of **[x, y] coordinates** describing obstacles.  
+  - `exits`: List of **[x, y] coordinates** for safe exits.  
+  - `hazards`: List of **[x, y] coordinates** for dynamically moving threats.  
+  - `start`: **[x, y] coordinate** of the initial position.  
 
+- **Outputs:**  
+  The grid visualization will display:  
+  - **Obstacles** (black).  
+  - **Hazards** (red).  
+  - **Start Location** (blue).  
+  - **Exits** (green).  
+  - **SafeStar Path** (purple).  
+  - **A\* Path** (orange). (If overlapping, A\* will overwrite SafeStar.)  
 
-To use with Safe* and A* search:
- Inputs:
- size: an integer for the (square) grid side length
- obstacles: a list of coordinates describing the shape of obstacles in the format (from top left) 
-            [[topleftx, toplefty], verticalheightdown = int, horizontal_width_right = int]
- exits = List of [x,y] coordinates of exit(s)
- shooters = List of [x,y] coordinates of shooter(s)
- start = [x,y] coordinate of start location
- 
- Output:
- The grid with:
-  Obstacle/blocked squares marked in black.
-  Shooter Location(s) marked in red.
-  Start Location marked in blue.
-  Exit(s) marked in green.
-  The Safe* Path is marked in purple.
-  The A* Path is marked in orange. (in the case they share the same square Safe* is colored over by A*)
+## Algorithm Explanation  
+SafeStar integrates a **potential field-based control scheme** with **A\* path planning** to optimize safe egress in dynamic environments.  
 
-## Algorithm Explanation
-See the final paper in the documents folder for details about the algorithm.
+For details about the algorithm and mathematical formulation, refer to the **final paper** in the `documents` folder.  
